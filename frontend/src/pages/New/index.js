@@ -41,7 +41,7 @@ export default function New( {history}){
             className={thumbnail ? 'has-thumbnail' : ''}
             >
                 <input type="file" onChange={event => setThumbnail(event.target.files[0])}/>
-                <img src={camera} alt="Select Image"/>
+                <img src={camera} alt="Select"/>
             </label>
 
 
