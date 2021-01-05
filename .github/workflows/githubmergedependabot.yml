@@ -2,20 +2,14 @@
 
 name: CI
 
-# Controls when the action will run. 
-on: [push, pull_request, workflow_dispatch]
+on: [pull_request]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  auto-merge:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
+          target: minor
           github-token: ${{ secrets.mytoken }}
